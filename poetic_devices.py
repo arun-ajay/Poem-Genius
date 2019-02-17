@@ -45,7 +45,6 @@ def dict_create_one_line(line1, line2):
 
 def alliteration(word_list_per_line, transcribe_list):
 	dictionary_list = [ dict_create_one_line(line,line2) for line,line2 in zip(transcribe_list,word_list_per_line)]
-	print(dictionary_list)
 
 	main_list = []
 	for each_dict in dictionary_list:
@@ -57,7 +56,7 @@ def alliteration(word_list_per_line, transcribe_list):
 		if len(sub_list) >= 2:
 			main_list.append(sub_list)
 
-	print(main_list)
+	return main_list
 
 
 
@@ -79,20 +78,20 @@ def print_poem(poem_lines):
 
 # file = input("Give me a file name: ")
 poem_lines = getfile("poem.txt")
-print_poem(poem_lines)
+# print_poem(poem_lines)
 word_list_per_line = extract_words_per_line(poem_lines)
 transcribe_list = extract_transcribed_words_per_line(poem_lines)
 
-for word1,word2 in zip(word_list_per_line[0],transcribe_list[0]):
-	print(word1,word2)
-
-alliteration(word_list_per_line,transcribe_list)
-
+# for line1,line2 in zip(word_list_per_line,transcribe_list):
+# 	for word1,word2 in zip(line1,line2):
+# 		print(word1,word2)
 
 
+#GERARD ALLITERATION LIST
+allit_list = alliteration(word_list_per_line,transcribe_list)
+#GERARD ONOMATOPOEIA LIST
+ono_list = onomatopoeia(word_list_per_line)
 
-# ono_list = onomatopoeia(word_list_per_line)
-
-# for word in ono_list:
-# 	print(word)
-
+# print_poem(poem_lines)
+# print(allit_list)
+# print(ono_list)
