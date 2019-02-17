@@ -33,6 +33,15 @@ def extract_transcribed_words_per_line(poem_lines):
 def alliteration():
 	print("hi")
 
+def onomatopoeia (word, onoList):
+	if (isOnomatopoeia(word)):
+		onoList.append(word)
+	return onoList
+
+def isOnomatopoeia(word):
+	onoFile = getfile("onomatopeia_words.txt")
+	return word in onoFile
+
 def getfile(poem_txt):
     poem_lines = [line.rstrip('\n') for line in open (poem_txt)]
     return poem_lines
@@ -50,4 +59,7 @@ transcribe_list = extract_transcribed_words_per_line(poem_lines)
 
 for word1 in word_list_per_line[0]:
 	print(word1)
+
+
+
 
