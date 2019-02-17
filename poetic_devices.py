@@ -1,5 +1,31 @@
 #!/usr/bin/env python3
 
+import requests
+from bs4 import BeautifulSoup
+
+def ipa_transcribe():
+		payload = {
+		'text_to_transcribe': 'matter tip box cute',
+		'submit': 'Show+transcription',
+		'output_dialect': 'br',
+		'output_style': 'only_tr',
+		'preBracket': '',
+		'postBracket': '',
+		'speech_support': '1'
+	}
+	response = requests.post('https://tophonetics.com/', data=payload)
+	soup = BeautifulSoup(response.text, 'html.parser')
+	result = soup.find_all(class_='transcribed_word')
+	for i in result:
+		print(i.string)
+
+def alliteration():
+
+def onomatopoeia ():
+    if (word = )
+
+
+
 def getfile(poem_txt):
     poem_lines = [line.rstrip('\n') for line in open (poem_txt)]
     return poem_lines
@@ -14,9 +40,4 @@ poem_lines = getfile(file)
 print_poem(poem_lines)
 
 
-def alliteration(
 
-
-
-def onomatopoeia ():
-    if (word = )
