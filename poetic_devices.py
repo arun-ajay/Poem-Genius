@@ -14,5 +14,9 @@ poem_lines = getfile(file)
 print_poem(poem_lines)
 
 
+def alliteration(
 
 
+
+def onomatopoeia ():
+    if (word = )
