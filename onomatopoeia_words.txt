@@ -28,7 +28,6 @@ chatter
 cheep
 chirp
 chomp
-choo-choo
 chortle
 clang
 clash
@@ -38,10 +37,8 @@ clack
 clatter
 click
 clink
-clip clop
 cluck
 clunk
-cock a doodle doo
 cough
 crack
 crackle
@@ -51,7 +48,6 @@ croak
 crunch
 cuckoo
 ding
-ding dong
 drip
 fizz
 flick
@@ -84,7 +80,6 @@ ker-ching
 kerplunk
 knock
 la
-Lub Dub (heart beating)
 meow
 moan
 moo
@@ -98,8 +93,6 @@ ouch
 ooze
 phew
 ping
-ping pong
-pitter patter
 plink
 plop
 pluck
