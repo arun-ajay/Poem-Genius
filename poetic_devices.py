@@ -60,3 +60,7 @@ transcribe_list = extract_transcribed_words_per_line(poem_lines)
 
 for word1,word2 in zip(word_list_per_line[0],transcribe_list[0]):
 	print(word1,word2)
+
+consonant_list = ["b","d","f","g","h","dʒ","k","l","m","n","p","r","s",
+"t","v","w","z","ʒ","tʃ","ʃ","θ","ð","ŋ","j"]
+print(len(consonant_list))
