@@ -12,18 +12,13 @@ def extract_transcribed_words_per_line(poem_lines):
     transcribed_lines = []
     for line in poem_lines:
         payload = {
-            'text_to_transcribe': line,
-            'submit': 'Show+transcription',
-            'output_dialect': 'br',
-            'output_style': 'only_tr',
-            'preBracket': '',
-            'postBracket': '',
-            'speech_support': '1'
+            'intext': line,
+            'ipa': 0
         }
-        response = requests.post('https://tophonetics.com/', data=payload)
+        response = requests.post('http://upodn.com/phon.php', data=payload)
         soup = BeautifulSoup(response.text, 'html.parser')
-        result = soup.find_all(class_='transcribed_word')
-        transcribed_line = [ipa_word.string for ipa_word in result]
+        result = soup.select_one('.wrapper').find('table').find_all('font')
+        transcribed_line = list(result[1].strings)[0].split()
         transcribed_lines.append(transcribed_line)
     return transcribed_lines
 
