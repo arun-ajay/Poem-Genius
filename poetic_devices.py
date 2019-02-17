@@ -21,8 +21,14 @@ def ipa_transcribe():
 
 def alliteration():
 
-def onomatopoeia ():
-    if (word = )
+def onomatopoeia (word, onoList):
+	if (isOnomatopoeia(word)):
+		onoList.append(word)
+	return onoList
+
+def isOnomatopoeia(word):
+	onoFile = getfile("onomatopeia_words.txt")
+	return word in onoFile
 
 
 
