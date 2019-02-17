@@ -32,18 +32,14 @@ def alliteration():
 	print("hi")
 
 
-def onomatopoeia(word, onoList):
-	if (isOnomatopoeia(word)):
-		onoList.append(word)
-	return onoList
-
-
-def isOnomatopoeia(word):
-	onoFile = getfile("onomatopeia_words.txt")
-	return word in onoFile
-
+def onomatopoeia(poem_lines):
+	onoFile = getfile("onomatopoeia_words.txt")
+	for line in poem_lines:
+		ono_list = [word for word in line if word.lower() in onoFile]
+	return ono_list
 
 def getfile(poem_txt):
+	#ONLY SEPARATES LINES, DOES NOT SEPARATE WORDS!
 	return [line.rstrip('\n') for line in open(poem_txt)]
 
 
@@ -60,6 +56,11 @@ transcribe_list = extract_transcribed_words_per_line(poem_lines)
 
 for word1,word2 in zip(word_list_per_line[0],transcribe_list[0]):
 	print(word1,word2)
+
+ono_list = onomatopoeia(word_list_per_line)
+
+for word in ono_list:
+	print(word)
 
 consonant_list = ["b","d","f","g","h","dʒ","k","l","m","n","p","r","s",
 "t","v","w","z","ʒ","tʃ","ʃ","θ","ð","ŋ","j"]
